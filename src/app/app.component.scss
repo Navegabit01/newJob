@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-menu {
+  .nav-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+    width: 100%;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
