@@ -1,0 +1,21 @@
+/* Styling for header component */
+
+/* Responsive Styles */
+@media (min-width: 640px) {
+  /* Medium screens and up */
+  .menu-item {
+    padding: 0.5rem 1rem;
+  }
+}
+@media (min-width: 768px) {
+  /* Large screens and up */
+  .menu-item {
+    padding: 0.5rem 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  /* Extra large screens and up */
+  .menu-item {
+    padding: 0.5rem 2rem;
+  }
+}

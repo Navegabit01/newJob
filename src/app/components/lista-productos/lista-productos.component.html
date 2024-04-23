@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>List of Products</h2>
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let product of pagedProducts">
+      <img [src]="product.loaded ? product.Image1 : 'assets/placeholder.webp'" alt="{{ product.Name }}" class="product-image">
+      <div class="product-details">
+        <h3>{{ product.Name }}</h3>
+        <p>Category: {{ product.Category }}</p>
+        <p>Price: {{ product.Price }}</p>
+        <!-- Add more details as needed -->
+        <button id="{{product.id}}" (click)="viewProductDetails(product.id)" >View Details</button>
+      </div>
+    </div>
+  </div>
+  <ng-template #noProducts>
+    <p>No products available</p>
+  </ng-template>
+
+  <app-pagination
+    [currentPage]="currentPage"
+    [totalPages]="totalPages"
+    (pageChange)="changePage($event)"
+  ></app-pagination>
+</div>

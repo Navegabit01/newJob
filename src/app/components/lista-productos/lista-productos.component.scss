@@ -1,0 +1,70 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // Two columns by default
+  grid-gap: 20px;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  height: 100%; // Set fixed height for consistency
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%; // Ensure the image fills the width of the card
+  height: auto; // Maintain aspect ratio
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; // Expand to fill remaining space
+  padding: 20px;
+}
+
+.product-details h3 {
+  margin-top: 0;
+  margin-bottom: 10px; // Add margin to separate from other text
+}
+
+.product-details p {
+  margin: 0; // Remove default margins
+  flex-grow: 1; // Expand to fill remaining space
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(5, 1fr); // Five columns on larger screens
+  }
+}
