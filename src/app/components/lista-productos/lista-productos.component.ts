@@ -35,6 +35,7 @@ export class ListaProductosComponent implements OnInit {
     this.productService.getProductos()
       .subscribe((products: Product[]) => {
         this.products = products.map((product, index) => ({ ...product, id: index + 1, loaded: false }));
+        console.log(this.products);
         this.totalPages = Math.ceil(this.products.length / this.pageSize);
         this.changePage(1);
       });

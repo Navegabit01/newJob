@@ -1,7 +1,27 @@
-<div class="product-details">
-  <h2>{{ product?.Name }}</h2>
-  <img [src]="product?.Image" alt="{{ product?.Name }}">
-  <p>{{ product?.Description_title }}</p>
-  <p>{{ product?.Description_content }}</p>
-  <p>Price: {{ product?.Price }}</p>
+<div class="product-details bg-white rounded-lg shadow-lg p-6">
+  <h2 class="text-2xl font-semibold mb-4">{{ product?.Name }}</h2>
+  <div class="flex flex-col md:flex-row items-center mb-6">
+    <img class="w-full md:w-1/2 rounded-lg mb-4 md:mb-0" [src]="product?.Image1" alt="{{ product?.Name }}">
+    <div class="md:ml-4 flex-1">
+      <p class="text-lg font-semibold mb-2">Price: {{ product?.Price }}</p>
+      <a href="{{ product?.Content }}" class="text-blue-600 underline mb-2">Return to products</a>
+      <p class="mb-4">{{ product?.Keywords }}</p>
+      <div class="flex items-center mb-4">
+        <span class="text-gray-600 mr-2">Rating:</span>
+        <div class="flex items-center">
+          <div class="w-4 h-4 bg-yellow-500 rounded-full mr-1"></div>
+          <span>{{ product?.Reviews?.rating }}</span>
+        </div>
+        <span class="text-gray-600 ml-2">{{ product?.Reviews?.votes }} votes</span>
+      </div>
+      <p class="mb-4">{{ product?.Description_title }}</p>
+      <p class="mb-6">{{ product?.Description_content }}</p>
+      <div class="flex mb-4">
+        <p class="mr-2 font-semibold">{{ product?.Care?.title }}:</p>
+      </div>
+      <div class="flex">
+        <p class="mr-2 font-semibold">Available Colors:</p>
+      </div>
+    </div>
+  </div>
 </div>
